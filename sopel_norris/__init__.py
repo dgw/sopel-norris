@@ -1,16 +1,16 @@
-# coding=utf8
 """sopel-norris
 
 Chuck Norris joke plugin for Sopel IRC bots.
 """
-from __future__ import unicode_literals, absolute_import, division, print_function
+from __future__ import annotations
 
 import random
 
 import requests
 
-from sopel import formatting, module
-from sopel.tools import SopelMemory, get_logger, web
+from sopel import formatting, plugin
+from sopel.tools import get_logger, web
+from sopel.tools.memories import SopelMemory
 
 
 LOGGER = get_logger('norris')
@@ -42,8 +42,8 @@ def shutdown(bot):
         pass
 
 
-@module.commands('norris', 'chucknorris')
-@module.output_prefix('[CNJ] ')
+@plugin.commands('norris', 'chucknorris')
+@plugin.output_prefix('[CNJ] ')
 def chuck_norris(bot, trigger):
     """Fetch a random Chuck Norris joke, with optional keyword search."""
     arg = trigger.group(2)
