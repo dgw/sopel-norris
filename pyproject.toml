@@ -14,7 +14,7 @@ readme = { file=["README.md", "NEWS"], content-type="text/markdown" }
 
 [project]
 name = "sopel-norris"
-version = "0.1.0"
+version = "0.2.0"
 description = "Chuck Norris joke plugin for Sopel IRC bots."
 
 authors = [
